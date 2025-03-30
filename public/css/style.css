@@ -13,3 +13,23 @@ input:focus{
   border-color: #1f1f1f5e !important;
   box-shadow: 0 0 0 .25rem rgba(13, 109, 253, 0) !important;
 }
+.header-search{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 200px;
+  width: 100%;
+  background-color: #130c1d;
+  border-bottom-right-radius: 30px;
+  border-bottom-left-radius: 30px;
+}
+.header-search > div{
+  width: 100%;
+}
+
+.info-section{
+  padding: 20px;
+  margin-bottom: 25px;
+  /* border-top: 1px dashed #00000050; */
+  border-bottom: 1px dashed #00000050;
+}
