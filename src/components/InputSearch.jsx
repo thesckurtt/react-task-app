@@ -21,7 +21,7 @@ const InputSearch = ({ onAddTask }) => {
   return (
     <header className="header-search p-4">
       <div className="row d-flex justify-content-center">
-        <div className="col-8">
+        <div className="col-12">
           <div className="input-group input-group-lg">
             <input
               type="text"
