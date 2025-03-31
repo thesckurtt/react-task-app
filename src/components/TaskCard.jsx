@@ -1,6 +1,7 @@
-const TaskCard = ({title, date, currentDate}) => {
+const TaskCard = ({title, date, currentDate, uuid}) => {
+  console.log(uuid)
   return (
-    <div className="card mb-4" style={{width: "70%"}}>
+    <div className="card mb-4" style={{width: "70%"}} data-uuid={uuid}>
       <div className="card-body">
         <h5 className="card-title">
           {title}
