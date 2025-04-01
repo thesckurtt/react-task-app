@@ -3,8 +3,7 @@ import { v4 as uuidv4 } from 'uuid';
 const InputSearch = ({ onAddTask }) => {
   const [title, setTitle] = useState("");
   const [date, setDate] = useState("");
-  const [uuid] = useState(uuidv4());
-  console.log(uuid);
+  const [uuid, setUuid] = useState(uuidv4());
   const theDate = new Date();
   const [currentDate] = useState(`${String(theDate.getDate()).padStart(2, "0")}/${String(theDate.getMonth() + 1).padStart(2, "0")} `)
 
@@ -18,6 +17,7 @@ const InputSearch = ({ onAddTask }) => {
     onAddTask({title, date, currentDate, uuid});
     setTitle("");
     setDate("");
+    setUuid(uuidv4());
   }
 
   return (
