@@ -1,10 +1,10 @@
 import TaskCard from "./TaskCard";
 
-const CardsSection = ({ data }) => {
+const CardsSection = ({ data, deleteTask }) => {
   return (
-    <section class="cards-section d-flex flex-column align-items-center">
+    <section className="cards-section d-flex flex-column align-items-center">
       {data.reverse().map(({ title, date, currentDate, uuid }) => (
-        <TaskCard key={uuid} title={title} date={date} currentDate={currentDate} uuid={uuid}/>
+        <TaskCard deleteTask={deleteTask} key={uuid} title={title} date={date} currentDate={currentDate} uuid={uuid}/>
       ))}
     </section>
   );
