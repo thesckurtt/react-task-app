@@ -1,5 +1,4 @@
-const TaskCard = ({title, date, currentDate, uuid}) => {
-  console.log(uuid)
+const TaskCard = ({title, date, currentDate, uuid, deleteTask}) => {
   return (
     <div className="card mb-4" style={{width: "70%"}} data-uuid={uuid}>
       <div className="card-body">
@@ -19,7 +18,7 @@ const TaskCard = ({title, date, currentDate, uuid}) => {
           <button type="button" className="btn btn-sm btn-outline-dark">
             Editar
           </button>
-          <button type="button" className="btn btn-sm btn-outline-dark">
+          <button type="button" className="btn btn-sm btn-outline-dark" onClick={()=>{deleteTask(uuid)}}>
             Excluir
           </button>
         </div>
