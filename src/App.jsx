@@ -4,20 +4,34 @@ import InputSearch from "./components/InputSearch";
 import MenuOptions from "./components/MenuOptions";
 
 function App() {
-  const [tasks, setTask] = useState([{title: "Tarefa exemplo", date: "2025-03-06", currentDate: "30/02", uuid: "32560819-050d-4e79-b5e9-b4b4ea211a96"}]);
+  const [tasks, setTasks] = useState([
+    {
+      title: "Tarefa exemplo",
+      date: "2025-03-06",
+      currentDate: "30/02",
+      uuid: "32560819-050d-4e79-b5e9-b4b4ea211a96",
+    },
+  ]);
 
-  console.log(tasks);
+  // console.log(tasks);
 
   const addTask = (task) => {
-    setTask([...tasks, task])
-  } 
+    setTasks([...tasks, task]);
+  };
 
-  console.log(tasks);
+  const deleteTask = (id, deleteAll = false) => {
+    if (deleteAll) {
+      setTasks([]);
+    }
+    setTasks(tasks.filter((e) => e.uuid !== id));
+  };
+
+  // deleteTasks('32560819-050d-4e79-b5e9-b4b4ea211a96');
   return (
     <>
-      <InputSearch onAddTask={addTask}/>
+      <InputSearch onAddTask={addTask} />
       <MenuOptions />
-      <CardsSection data={tasks} />
+      <CardsSection deleteTask={deleteTask} data={tasks} />
     </>
   );
 }
