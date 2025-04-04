@@ -18,7 +18,7 @@ const TaskCard = ({title, date, currentDate, uuid, deleteTask}) => {
           <button type="button" className="btn btn-sm btn-outline-dark">
             Editar
           </button>
-          <button type="button" className="btn btn-sm btn-outline-dark" onClick={()=>{deleteTask(uuid)}}>
+          <button type="button" className="btn btn-sm btn-outline-dark" onClick={()=>{deleteTask({id: uuid})}}>
             Excluir
           </button>
         </div>
