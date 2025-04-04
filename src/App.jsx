@@ -83,7 +83,7 @@ function App() {
   return (
     <>
       <InputSearch onAddTask={addTask} />
-      <MenuOptions deleteTask={deleteTask} />
+      <MenuOptions deleteTask={deleteTask} tasks={tasks}/>
       <CardsSection deleteTask={deleteTask} data={tasks} />
     </>
   );
