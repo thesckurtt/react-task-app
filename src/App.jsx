@@ -1,27 +1,27 @@
 import { useState } from "react";
 import CardsSection from "./components/CardsSection";
-import InputSearch from "./components/InputSearch";
 import MenuOptions from "./components/MenuOptions";
 import Swal from "sweetalert2";
+import InputsAddTasks from "./components/InputsAddTasks";
 
 function App() {
   const [tasks, setTasks] = useState([
     {
       title: "Tarefa exemplo 1",
       date: "2025-03-06",
-      currentDate: "30/02",
+      currentDate: "30/02/25",
       uuid: "32560819-050d-4e79-b5e9-b4b4ea211a96",
     },
     {
       title: "Tarefa exemplo 2",
       date: "2025-03-06",
-      currentDate: "30/02",
+      currentDate: "30/02/25",
       uuid: "32560819-050d-4e79-b5e9-b4b4ea394a96",
     },
     {
       title: "Tarefa exemplo 3",
       date: "2025-03-06",
-      currentDate: "30/02",
+      currentDate: "30/02/25",
       uuid: "32569465-050d-4e79-b5e9-b4b4ea394a96",
     },
   ]);
@@ -52,7 +52,7 @@ function App() {
         if (result.isConfirmed) {
           Swal.fire({
             title: "Tarefa Excluída com sucesso!",
-            text: `A tarefa de id [${id}] foi excluída.`,
+            html: `A tarefa <b>${task.title}</b> foi excluída.`,
             icon: "success",
           });
           setTasks(tasks.filter((e) => e.uuid !== id));
@@ -82,7 +82,7 @@ function App() {
 
   return (
     <>
-      <InputSearch onAddTask={addTask} />
+      <InputsAddTasks onAddTask={addTask} />
       <MenuOptions deleteTask={deleteTask} tasks={tasks}/>
       <CardsSection deleteTask={deleteTask} data={tasks} />
     </>
