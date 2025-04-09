@@ -1,6 +1,7 @@
 import TaskCard from "./TaskCard";
 
 const CardsSection = ({ data, deleteTask }) => {
+  console.log(data)
   return (
     <section className="cards-section d-flex flex-column align-items-center">
       {data.reverse().map(({ title, date, currentDate, uuid }) => (
